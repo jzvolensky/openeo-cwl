@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "openeo-cwl"
+version = "0.0.1"
+description = "OpenEO CWL execution service based on cwltool"
+authors = ["Juraj Zvolensky"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
