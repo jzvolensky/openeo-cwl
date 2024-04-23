@@ -1,9 +1,9 @@
 import os
 import datetime
 
-from sqlalchemy import create_engine, DateTime, Column, Integer, String
-from sqlalchemy.orm import scoped_session, sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import create_engine, DateTime, Column, Integer, String, Text # type: ignore
+from sqlalchemy.orm import scoped_session, sessionmaker # type: ignore
+from sqlalchemy.ext.declarative import declarative_base # type: ignore
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
 db_path = os.path.join(base_dir, 'cwl.db')
@@ -17,6 +17,7 @@ class CWL(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String)
     workflow_id = Column(String)
+    inputs = Column(Text)
     creation_date = Column(DateTime, default=datetime.datetime.now)
 
     def to_dict(self):
